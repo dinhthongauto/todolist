@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+ 
+<div class="container box-day col">
+    <h1><%= currentDay %></h1>
+</div>
+
+<div class="container col">
+    <form action="/" method="POST">
+        <ul id="view" ">
+            <% for (let i = 0; i < newItemList.length; i++) {%>
+
+                <div class="checkbox item col-12">
+                    <input type="checkbox" name="packersOff" id="packers" value="1"/>
+                    <label for="packers" class="strikethrough "><%= newItemList[i] %></label>
+                </div>
+                
+            <% } %>
+            <div class="input-box">
+                <input type='text' name="text" id="inputText" autocomplete="off" placeholder="New item" class="input-placeholder"/>
+            <button class="add-btn">add</button> 
+            </div>
+            
+        </ul>   
+    </form>
+</div>
+
+    <%- include("partials/footer.ejs") %>
+
